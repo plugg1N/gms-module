@@ -20,8 +20,8 @@ Module would automatically make evaluations, store them and give verbose descrip
 	- `mode`: A string of your ML task: `'regression' OR 'classification'`
 	- `include`: A list of model-obj. of your choice: `[LinearRegression(), SVR()]`
 	- `metrics`: A list of strings to evaluate on: 
-		 `classification = ['accuracy', 'f1-score', 'precision', 'recall', 'roc-auc']`
-		 `regression = ['mae', 'mape', 'mse', 'rmse', 'r2-score']`
+		- `classification = ['accuracy', 'f1-score', 'precision', 'recall', 'roc-auc']`
+		- `regression = ['mae', 'mape', 'mse', 'rmse', 'r2-score']`
 	- `data`: A list of your data to train/validate on: 
 		 `[X_train, X_test, y_train, y_test]`
 	- `pivot`: *if necessary*: A string of one of metrics provided: `'accuracy'` (pivot is a metric that is most important for evaluation)
