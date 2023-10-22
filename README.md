@@ -13,6 +13,10 @@ User only needs to pass:
 
 Module would automatically make evaluations, store them and give verbose description of each model's performance!
 
+# Installation
+
+To install GMSModule ensure that python3 and pip are installed. In terminal simply type:
+`pip install gms` OR `pip3 install gms`
 
 # How to use?
 
@@ -25,6 +29,12 @@ Module would automatically make evaluations, store them and give verbose descrip
 	- `data`: A list of your data to train/validate on: 
 		 `[X_train, X_test, y_train, y_test]`
 	- `pivot`: *if necessary*: A string of one of metrics provided: `'accuracy'` (pivot is a metric that is most important for evaluation)
+
+2. Import GMSModule into your project:
+
+```python
+from gms.GMSModule import GMSModule
+```
 
 
 2. Create a **GMSModule** object with your data:
