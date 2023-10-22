@@ -1,0 +1,115 @@
+___
+
+![[Pasted image 20231022190445.png]]
+*Chart 1: Basic GMS Workflow*
+
+# Brief Description
+
+___
+
+**<ins>General Model Selection Module</ins>** *(next: GMS-Module)* is a simple yet neat model selection tool that would help machine learning developers to get their hands on the most efficient model/pipeline for their specific task. 
+
+User only needs to pass:
+- *Models AND/OR Pipelines* of their choice
+- *Metrics* For evaluation
+- *Pivot* if certain metric is more important than the others
+- *Data* to train and evaluate on
+
+Module would automatically make evaluations, store them and give verbose description of each model's performance!
+
+
+# How to use?
+
+___
+
+1. Make sure that all the variables are prepared to be used by GMS:
+	- `mode`: A string of your ML task: `'regression' OR 'classification'`
+	- `include`: A list of model-obj. of your choice: `[LinearRegression(), SVR()]`
+	- `metrics`: A list of strings to evaluate on: 
+		 `classification = ['accuracy', 'f1-score', 'precision', 'recall', 'roc-auc']`
+		 `regression = ['mae', 'mape', 'mse', 'rmse', 'r2-score']`
+	- `data`: A list of your data to train/validate on: 
+		 `[X_train, X_test, y_train, y_test]`
+	- `pivot`: *if necessary*: A string of one of metrics provided: `'accuracy'` (pivot is a metric that is most important for evaluation)
+
+
+2. Create a **GMSModule** object with your data:
+```python
+GMSPipe = GMSModule(mode="classification",
+										pivot='f1-score',
+										metrics=['accuracy', 'f1-score'],
+										include=[LogisticRegression(), RandomForestClassifier()],
+										data=[X_train, X_test, y_train, y_test])
+```
+
+3. Use any of methods provided:
+```python
+best_model, _ = GMSPipe.best_model()
+print(best_model)
+```
+
+```python
+RandomForestClassifier()
+```
+
+
+# Why this module?
+
+___
+
+Every Machine Learning developer, especially after extensive data analysis, has to pick **the most precise Machine Learning model**. Some engineers already know which model would fit perfectly, due to the ease of task given or due to the fact that ML model is evident.
+
+> **But some engineers might struggle with the BLIND choice between dozens if not HUNDREDS of ML models / pipelines that they have built. That's where GMS Module could help!**
+
+User doesn't have to build a custom function that would evaluate each model one by one on their metrics. **User just has to pass in each model and name metrics of their choice** and *voila!* 
+
+Then, user is able to look at the `GMSModule.description()` and get verbose information about models' evaluations and see which models are better than the others.
+
+Users can also get their data into variables for further usage, like in this <ins>example</ins>:
+
+```python
+# Get predictions of the best model from list
+_, preds = GMSModule.best_model()
+
+# DataFrame data
+data = {
+				'id': range(25000),
+				'value': preds
+}
+
+# Create a DataFrame and pass information into it
+df = pd.DataFrame(data)
+df.to_csv('submit.csv', index=False)
+```
+
+
+# Project History:
+
+___
+
+This project was created as a **fun side project for me** to experiment with scikit-learn tools. Project has helped me to become more focused on programming overall and taught me how to write m*y own PYPI module for others to use!*
+
+> The idea was born on `16.10.2023` and the first draft of the project was so inefficient, so that I had to rewrite almost everything
+
+Module used to re-evaluate each time I've tried to get evaluations of each model. Evaluations used 'if-statements' which looked hideous and unprofessional.
+
+With the 5-th version done on `20.10.2023` everything has been changed. Re-evaluation problem was fixed, module could catch the most obvious exceptions caused by user and 'if-statements' were replaced with neat dictionaries.
+
+As if `22.10.2023`, I am creating the first version of this Markdown (README.md) file. Project is polished. All I need is to:
+
+- Create a module file (`*.py`)
+- Write a bunch of documentation: this doc in Russian, code run-through, basic use-cases and much more!
+- Get a license
+- Post this module on PYPI
+
+
+# My Socials:
+
+___
+
+- Full Name:  Nikita Zhamkov (Dmitrievich)
+- Country, city:  Russia, Saint-Petersburg
+- Phone number: +79119109210
+- Email: nikitazhamkov@gmail.com
+- GitHub: https://github.com/plugg1N
+- Telegram: https://t.me/jeberkarawita
