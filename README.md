@@ -1,11 +1,7 @@
-___
-
-![[Pasted image 20231022190445.png]]
+![](https://github.com/plugg1N/gms-module/blob/main/images/chart1.png?raw=true)
 *Chart 1: Basic GMS Workflow*
 
 # Brief Description
-
-___
 
 **<ins>General Model Selection Module</ins>** *(next: GMS-Module)* is a simple yet neat model selection tool that would help machine learning developers to get their hands on the most efficient model/pipeline for their specific task. 
 
@@ -19,8 +15,6 @@ Module would automatically make evaluations, store them and give verbose descrip
 
 
 # How to use?
-
-___
 
 1. Make sure that all the variables are prepared to be used by GMS:
 	- `mode`: A string of your ML task: `'regression' OR 'classification'`
@@ -36,10 +30,10 @@ ___
 2. Create a **GMSModule** object with your data:
 ```python
 GMSPipe = GMSModule(mode="classification",
-										pivot='f1-score',
-										metrics=['accuracy', 'f1-score'],
-										include=[LogisticRegression(), RandomForestClassifier()],
-										data=[X_train, X_test, y_train, y_test])
+	pivot='f1-score',
+	metrics=['accuracy', 'f1-score'],
+	include=[LogisticRegression(), RandomForestClassifier()],
+	data=[X_train, X_test, y_train, y_test])
 ```
 
 3. Use any of methods provided:
@@ -54,8 +48,6 @@ RandomForestClassifier()
 
 
 # Why this module?
-
-___
 
 Every Machine Learning developer, especially after extensive data analysis, has to pick **the most precise Machine Learning model**. Some engineers already know which model would fit perfectly, due to the ease of task given or due to the fact that ML model is evident.
 
@@ -73,8 +65,8 @@ _, preds = GMSModule.best_model()
 
 # DataFrame data
 data = {
-				'id': range(25000),
-				'value': preds
+	'id': range(25000),
+	'value': preds
 }
 
 # Create a DataFrame and pass information into it
@@ -85,7 +77,6 @@ df.to_csv('submit.csv', index=False)
 
 # Project History:
 
-___
 
 This project was created as a **fun side project for me** to experiment with scikit-learn tools. Project has helped me to become more focused on programming overall and taught me how to write m*y own PYPI module for others to use!*
 
@@ -104,8 +95,6 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 
 
 # My Socials:
-
-___
 
 - Full Name:  Nikita Zhamkov (Dmitrievich)
 - Country, city:  Russia, Saint-Petersburg
