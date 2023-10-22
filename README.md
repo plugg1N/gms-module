@@ -107,6 +107,9 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 - Get a license
 - Post this module on PYPI
 
+`21:54. 22.10.2023` I've already posted my project to PYPI. Everything seems to work fine. Enjoy using my library :)
+
+
 
 # My Socials:
 
