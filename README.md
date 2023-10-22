@@ -18,6 +18,10 @@ Module would automatically make evaluations, store them and give verbose descrip
 To install GMSModule ensure that python3 and pip are installed. In terminal simply type:
 `pip install gms` OR `pip3 install gms`
 
+```python
+pip3 install gms
+```
+
 # How to use?
 
 1. Make sure that all the variables are prepared to be used by GMS:
