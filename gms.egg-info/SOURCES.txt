@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+gms/GMSModule.py
+gms/__init__.py
+gms.egg-info/PKG-INFO
+gms.egg-info/SOURCES.txt
+gms.egg-info/dependency_links.txt
+gms.egg-info/requires.txt
+gms.egg-info/top_level.txt
