@@ -1,7 +1,7 @@
 ![](https://github.com/plugg1N/gms-module/blob/main/images/chart1.png?raw=true)
 *Chart 1: Basic GMS Workflow*
 
--  [README.md на русском](https://github.com/plugg1N/gms-module/blob/main/README_Russian.md) ❤️
+-  [Этот README.md на русском языке](https://github.com/plugg1N/gms-module/blob/main/README_Russian.md) ❤️
 
 # Brief Description
 
