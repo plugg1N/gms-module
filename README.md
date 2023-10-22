@@ -1,6 +1,8 @@
 ![](https://github.com/plugg1N/gms-module/blob/main/images/chart1.png?raw=true)
 *Chart 1: Basic GMS Workflow*
 
+- README.md на русском 🇷🇺 [link](https://github.com/plugg1N/gms-module/blob/main/README Russian.md)
+
 # Brief Description
 
 **<ins>General Model Selection Module</ins>** *(next: GMS-Module)* is a simple yet neat model selection tool that would help machine learning developers to get their hands on the most efficient model/pipeline for their specific task. 
@@ -88,8 +90,7 @@ df = pd.DataFrame(data)
 df.to_csv('submit.csv', index=False)
 ```
 
-
-# Project History:
+# Project History
 
 
 This project was created as a **fun side project for me** to experiment with scikit-learn tools. Project has helped me to become more focused on programming overall and taught me how to write m*y own PYPI module for others to use!*
@@ -111,7 +112,7 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 
 
 
-# My Socials:
+# My Socials
 
 - Full Name:  Nikita Zhamkov (Dmitrievich)
 - Country, city:  Russia, Saint-Petersburg
