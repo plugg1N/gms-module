@@ -5,7 +5,8 @@
 
 # Brief Description
 
-**<ins>General Model Selection Module</ins>** *(next: GMS-Module)* is a simple yet neat model selection tool that would help machine learning developers to get their hands on the most efficient model/pipeline for their specific task. 
+**<ins>General Model Selection Module</ins>** *(next: GMS-Module)* is a simple yet neat model selection tool that would help machine learning developers to get their hands on the most efficient model/pipeline for their specific task. *This
+project has brought me 5 points additionally for IT General State Exam (ЕГЭ по информатике)* 😌
 
 User only needs to pass:
 - *Models AND/OR Pipelines* of their choice
