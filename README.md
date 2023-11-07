@@ -113,7 +113,17 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 `23:28. 07.11.2023` I've created a new 0.3.0 version that fixed some bugs I've encountered. Now module has less bugs. New feature added: `GMSModule.to_df()` :)
 
 
-## TO DO:
+# Quick Message
+
+**I WON'T UPDATE FILES FOR PYPI FOR THIS REPO** because those commits are:
+
+1. Unnecessary
+2. Break auto merge for git
+
+So please, don't look at files that are not related to gms-module code itself!
+
+
+# TO DO:
 
 - Add function to receive predictions of other evaluation models **TODO**
 
