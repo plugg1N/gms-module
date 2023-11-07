@@ -125,7 +125,8 @@ So please, don't look at files that are not related to gms-module code itself!
 
 # TO DO:
 
-- Add function to receive predictions of other evaluation models **TODO**
+- Add function to receive predictions of other evaluation models
+- Create a Markdown file for Usage description and examples
 
 # Fixed:
 
