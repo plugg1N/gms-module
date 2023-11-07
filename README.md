@@ -108,18 +108,20 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 - Get a license
 - Post this module on PYPI
 
-`21:54. 22.10.2023` I've already posted my project to PYPI. Everything seems to work fine. Enjoy using my library :)
+`21:54. 22.10.2023` I've already posted my project to PYPI. Everything seems to work fine.
+
+`23:28. 07.11.2023` I've created a new 0.3.0 version that fixed some bugs I've encountered. Now module has less bugs. New feature added: `GMSModule.to_df()` :)
 
 
 ## TO DO:
 
-<p align="left">
-<ul>
-  <li>Fix error with the order of arguments provided</li> <img align="right" src="https://media1.giphy.com/media/n24Eq6str4wLglFVw6/giphy.gif?cid=ecf05e47t0464j8hzv6v79kz4a71akk0r3n05md4of2kcxor&ep=v1_stickers_search&rid=giphy.gif" height=110 width=125>
-  <li>Enable support for non-binary classification tasks. (f1-score and more scores are `binary` by default)</li>
-  <li>Add `to_Dataframe` function that will return a Df as a format of model scores visualization</li>
-  <li>Add function to receive predictions of other evaluation models</li>
-</ul></p>
+- Add function to receive predictions of other evaluation models **TODO**
+
+## Fixed:
+
+- Fixed issue with `pivot = None` error
+- Fixed issue with non-binary classification support 
+
 
 
 
