@@ -1,4 +1,4 @@
-"""New Vers. 0.2.0"""
+"""New Vers. 0.3.0"""
 
 """    === General Model Selection Module (GMSModule) ===    """
 
@@ -43,7 +43,10 @@ Made by:
 ___
 """
 
-## Imports
+
+
+## Import necessary libraries
+
 # Math
 import math
 # Scorings for 'classification'
@@ -53,10 +56,13 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error,
 # Beautify
 from tabulate import tabulate
 from tqdm import tqdm
+# For Dataframe
+import pandas as pd
+                            
 
 ## Main class
 class GMSModule:
-    def __init__(self, mode: str, include: list, data: list, metrics: list, pivot: str = None) -> None:
+    def __init__(self, *, mode: str, include: list, data: list, metrics: list, pivot: str = None) -> None:
         """
         Initiate variables for work / catch errors created by users while creating an object
         
@@ -92,12 +98,13 @@ class GMSModule:
         
         # Private
         self.__evaluation_functions = {
-            # For classification
+            # For any classification task
             'accuracy': accuracy_score,
-            'precision': precision_score,
-            'recall': recall_score,
-            'f1-score': f1_score,
-            'roc-auc': roc_auc_score,
+            'precision': lambda y_true, y_pred: precision_score(y_true, y_pred, average='weighted'),
+            'recall': lambda y_true, y_pred: recall_score(y_true, y_pred, average='weighted'),
+            'f1-score': lambda y_true, y_pred: f1_score(y_true, y_pred, average='weighted'),
+            'roc-auc': lambda y_true, y_pred: roc_auc_score(y_true, y_pred, multi_class='ovr'),
+            
             
             # For regression
             'mae': mean_absolute_error,
@@ -132,7 +139,7 @@ class GMSModule:
             raise ValueError(f"'{self.pivot}' name is not valid. Valid pivot names are in: {valid_pivot_vals}")
             
         # Catch 'pivot is not in metrics' error
-        if self.pivot not in self.metrics:
+        if self.pivot not in self.metrics + [None]:
             raise ValueError(f"'{self.pivot}' is not in given metrics: {self.metrics}")
             
 
@@ -284,6 +291,51 @@ class GMSModule:
                 ranking[idx + 1] = model
 
         return ranking
+    
+    
+    def to_df(self, subset: str = "test") -> pd.DataFrame:
+        """
+        Get a Dataframe of subset scores
+        
+        Args:
+            - subset: A string of two possible subsets: "train" or "test"
+            
+        Returns:
+            'pd.Dataframe' with model name and scores provided by user
+        """
+        # Call the evaluation method to get the results.
+        results_train, results_test = self._evaluate_models()
+        
+        # Create columns to fill in the data
+        
+        # Model Names would always be as a column 
+        columns = ['Model Name']
+        
+        # For each metric provided create a column with its name
+        for i in self.metrics:
+            columns.append(i.title())
+            
+        data = []
+        
+        if subset == "test":
+            # for each model given
+            for i in range(len(self.include)):
+                # take its score predictions and create a list of [model_name, *scores] 
+                temp_data = [str(self.include[i])] + list(results_test[i][1].values())
+                data.append(temp_data)
+                
+        elif subset == "train":
+            # the same as above ...
+            for i in range(len(self.include)):
+                temp_data = [str(self.include[i])] + list(results_train[i][1].values())
+                data.append(temp_data)
+                
+        else:
+            # Check if subset is not "train" or "test"
+            raise ValueError(f"Provided subset: '{subset}' is not in possible subsets: ['train', 'test']")
+            
+        
+        return pd.DataFrame(data=data, columns=columns)
         
         
       
@@ -327,8 +379,4 @@ class GMSModule:
         print("# 3. Ranking of each model:\n")
         for rank, model in ranking.items():
             print(f"{rank}: {model}")
-            
-    
-    
-    ## END.
-        
+ 
