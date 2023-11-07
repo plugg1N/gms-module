@@ -127,7 +127,7 @@ So please, don't look at files that are not related to gms-module code itself!
 
 - Add function to receive predictions of other evaluation models **TODO**
 
-## Fixed:
+# Fixed:
 
 - Fixed issue with `pivot = None` error
 - Fixed issue with non-binary classification support 
