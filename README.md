@@ -130,6 +130,7 @@ So please, don't look at files that are not related to gms-module code itself!
 # TO DO:
 
 - Create a Markdown file for Usage description and examples
+- *Maybe* cross_validation support
 
 # Fixed:
 
