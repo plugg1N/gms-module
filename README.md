@@ -117,16 +117,6 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 unnecessary.
 
 
-# Quick Message
-
-**I WON'T UPDATE FILES FOR PYPI FOR THIS REPO** because those commits are:
-
-1. Unnecessary
-2. Break auto merge for git
-
-So please, don't look at files that are not related to gms-module code itself!
-
-
 # TO DO:
 
 - Create a Markdown file for Usage description and examples
