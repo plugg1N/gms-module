@@ -113,6 +113,9 @@ As if `22.10.2023`, I am creating the first version of this Markdown (README.md)
 
 `23:28. 07.11.2023` I've created a new 0.3.0 version that fixed some bugs I've encountered. Now module has less bugs. New feature added: `GMSModule.to_df()` :)
 
+`11:02. 09.11.2023` New version 0.4.0. Now, you get get predictions of each model provided! Most of the comments were cleared due to the fact that they were
+unnecessary.
+
 
 # Quick Message
 
@@ -126,14 +129,13 @@ So please, don't look at files that are not related to gms-module code itself!
 
 # TO DO:
 
-- Add function to receive predictions of other evaluation models
 - Create a Markdown file for Usage description and examples
 
 # Fixed:
 
 - Fixed issue with `pivot = None` error
 - Fixed issue with non-binary classification support 
-
+- Added: `GMSModule.get_predictions()` function. Now you can evaluate each model provided!
 
 
 
