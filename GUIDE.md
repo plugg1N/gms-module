@@ -37,3 +37,16 @@ from gms.GMSModule import GMSModule
 ```
 
 Because, Module is located in: `./gms (directory) -> GMSModule.py -> GMSModule (class)`
+
+
+## Start working
+
+To initialize a GMSModule object use something like this:
+
+```python
+GMSPipe = GMSModule(mode="classification",
+	pivot='f1-score',
+	metrics=['accuracy', 'f1-score'],
+	include=[LogisticRegression(), RandomForestClassifier()],
+	data=[X_train, X_test, y_train, y_test])
+```
