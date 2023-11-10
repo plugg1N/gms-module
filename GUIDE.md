@@ -106,7 +106,7 @@ model could be accessed by key value. Like: `ranking[1]` will return best model 
 `GMSModule.create_ranking(self)`
 
 - **Returns**:
-	- a Python dict. with keys as numbers from 1 to N and Models from `self.include` as values for each key. All models are sorted by pivot provided or 
+	- a Python dict. with keys as numbers from 1 to N and Models from `self.include` as values for each key. All models are sorted by pivot provided or sum of scores if `pivot` is not provided.
 - **Usage**:
  	```python
   	ranking = myPipe.create_ranking()
