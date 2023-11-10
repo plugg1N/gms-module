@@ -3,7 +3,7 @@
 
 Я не буду обновлять русскую версию README.md часто. Вся самая актуальная информация - в основном README.md на английском! 
 
--  [Полный Гайд По Использованию (*на англ. языке*)](https://github.com/plugg1N/gms-module/blob/main/USAGE.md)
+-  [Полный Гайд По Использованию (*на англ. языке*)](https://github.com/plugg1N/gms-module/blob/main/GUIDE.md)
 
 # Краткое описание
 
