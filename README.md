@@ -2,6 +2,7 @@
 *Chart 1: Basic GMS Workflow*
 
 -  [Этот README.md на русском языке](https://github.com/plugg1N/gms-module/blob/main/README_Russian.md) ❤️
+-  [Verbose Usage Guide](https://github.com/plugg1N/gms-module/blob/main/USAGE.md)
 
 # Brief Description
 
