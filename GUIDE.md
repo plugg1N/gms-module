@@ -50,3 +50,41 @@ GMSPipe = GMSModule(mode="classification",
 	include=[LogisticRegression(), RandomForestClassifier()],
 	data=[X_train, X_test, y_train, y_test])
 ```
+
+# Main functions
+
+## Best Model
+
+Return two values, that should be unpacked: object of the best model evaluated by module and predictions made by this model.
+Model scores evaluation is based on sum of metrics if `pivot` is not provided or `pivot` metric itself.   
+
+`GMSModule.best_model(self, print_info: bool = False)`
+
+- **Args**:
+	- `print_info`: print information about retuned values / return value itself. `True` OR `False`
+- **Returns**:
+	- best model object as a first value / predictions of best model as second value
+- **Usage**:
+ 	```python
+  	myBestModel, bestModelPredictions = myPipe.best_model()
+  	myPipe.best_model(print_info=True)
+   	```
+
+## Create Ranking
+
+Return a dictionary which represents ranking of each model based on `pivot` or sum of scores. Ranking is made automatically and each
+model could be accessed by key value. Like: `ranking[1]` will return best model given, `ranking[2]` will return second best model ranked.
+
+`GMSModule.create_ranking(self)`
+
+- **Returns**:
+	- a Python dict. with keys as numbers from 1 to N and Models from `self.include` as values for each key. All models are sorted by pivot provided or 
+- **Usage**:
+ 	```python
+  	ranking = myPipe.create_ranking()
+   	```
+Example of returned value:
+
+```python
+{1: LinearRegression(), 2: SVR(), 3: LGBMRegressor()}
+```
