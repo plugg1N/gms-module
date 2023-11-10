@@ -51,6 +51,34 @@ GMSPipe = GMSModule(mode="classification",
 	data=[X_train, X_test, y_train, y_test])
 ```
 
+
+# Supported Metrics
+
+```python
+# For classification
+'accuracy'
+'precision'
+'recall'
+'f1-score'
+'roc-auc'
+            
+# For regression
+'mae': mean_absolute_error,
+'mape': mean_absolute_percentage_error,
+'mse': mean_squared_error,
+'rmse': lambda y_true, y_pred: math.sqrt(mean_squared_error(y_true, y_pred)),
+'r2-score': r2_score
+```
+
+# Class Arguments
+
+- `mode`: "classification" or "regression". Choose a task user trying to achieve.
+- `metrics`: A list of metrics to evaluate on. Check supported metrics above.
+- `include`: A list of models OR Pipelines, created by user.
+- `data`: A list of data variables. Provide them in a list in this order: `[X_train, X_validation, y_train, y_validation]`.
+- `pivot` [Optional]: A metric *that is in `metrics` provided [!!]* to focus on when making a decision on best model/Pipeline.
+
+
 # Main functions
 
 ## Best Model
