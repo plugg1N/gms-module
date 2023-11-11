@@ -79,6 +79,19 @@ GMSPipe = GMSModule(mode="classification",
 - `pivot` [Optional]: A metric *that is in `metrics` provided [!!]* to focus on when making a decision on best model/Pipeline.
 
 
+
+# All supported functions:
+
+- Best Model: `GMSModule.best_model(self, print_info: bool = False)`
+- Create Ranking: `GMSModule.create_ranking(self)`
+- To DF: `GMSModule.to_df(self, subset: str = "test") -> pd.DataFrame:`
+- Get Predictions: `GMSModule.get_predictions(self, model, subset: str = "test") -> list`
+- Describe: `GMSModule.describe()`
+
+
+
+&nbsp;
+&nbsp;
 # Main functions
 
 ## Best Model
