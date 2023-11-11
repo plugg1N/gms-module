@@ -116,3 +116,97 @@ Example of returned value:
 ```python
 {1: LinearRegression(), 2: SVR(), 3: LGBMRegressor()}
 ```
+
+
+## To Dataframe
+
+Return a pandas DataFrame with left-most column as Model Names and other N columns with names of each metric provided.
+
+`GMSModule.to_df(self, subset: str = "test") -> pd.DataFrame:`
+
+- **Args**:
+	- `subset`: A string value that determines which scores of which subset to return as metric values. *"train" or "test" (validation)* 
+- **Returns**:
+	- a Pandas DataFrame with all scores for each model.
+- **Usage**:
+ 	```python
+  	df = myPipe.to_df(subset="train")
+  	df["Accuracy"]
+   	```
+Example of returned value:
+
+
+|    |      Model Name      | Accuracy |
+| -- | -------------------- | -------- |
+|  0  |LogisticRegression() | 0.860911 |
+
+
+
+## Get Predictions
+
+Return list of preidctions of a subset of model that you are interested in.
+
+`GMSModule.get_predictions(self, model, subset: str = "test") -> list`
+
+- **Args**:
+	- `model`: An object of model you are trying to get predictions from.
+ 	- `subset`: A string of a subset you need.
+- **Returns**:
+	- a Python list with predictions of a chosen model on a subset.
+- **Usage**:
+ 	```python
+  	preds = myPipe.get_predictions(model=LogisticRegression(), subset="test")
+  	print(f1_score(y_true, preds))
+   	```
+Example of returned value:
+
+```python
+[0 1 0 1 1 1 0 1 0 0 0 0 0 1 0 1]
+```
+
+
+## Describe
+
+Print a verbose description of: all your inputs, all inforamtion about evaluations done by GMS Module.
+
+`GMSModule.describe()`
+
+Example of work of the function:
+
+```
+==== DESCRIPTION ====
+
+Evaluation mode: classification
+
+From models selected: [LogisticRegression(), RandomForestClassifier()]
+
+Pivot selected: f1-score
+
+Metrics for evaluation: ['accuracy', 'f1-score']
+
+
+# 1. Evaluation metrics for each model passed into the object for | TRAIN / TEST:
+
+Models (train)            Metrics (train)
+------------------------  ----------------------------------------------------------------
+LogisticRegression()      {'accuracy': 0.8499399759903962, 'f1-score': 0.8182569382632182}
+RandomForestClassifier()  {'accuracy': 1.0, 'f1-score': 1.0} 
+
+
+Models (test)             Metrics (test)
+------------------------  ----------------------------------------------------------------
+LogisticRegression()      {'accuracy': 0.8609112709832134, 'f1-score': 0.8313259038678701}
+RandomForestClassifier()  {'accuracy': 0.9424460431654677, 'f1-score': 0.9403584741578498} 
+
+
+# 2. Best model name and scores:
+
+Best model name: RandomForestClassifier()
+Best model score: 0.9403584741578498
+
+
+# 3. Ranking of each model:
+
+1: RandomForestClassifier()
+2: LogisticRegression()
+```
