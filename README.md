@@ -120,12 +120,12 @@ unnecessary.
 
 # TO DO:
 
-- Create a Markdown file for Usage description and examples
 - *Maybe* cross_validation support
 
 # Fixed:
 
 - Fixed issue with `pivot = None` error
+- Create a Markdown file for Usage description and examples
 - Fixed issue with non-binary classification support 
 - Added: `GMSModule.get_predictions()` function. Now you can evaluate each model provided!
 
